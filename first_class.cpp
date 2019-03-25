@@ -59,7 +59,7 @@ int potencia(int num,int i)
     else if(i%2==0) return potencia(num*num,i/2);
 }
 
-int pontencia_interativa(int n,int i)
+int pontencia_iterativa(int n,int i)
 {
     int total=1;
     while(i!=1){
@@ -108,7 +108,7 @@ int main()
     delete[] palabra;
     //4
     cout<<potencia(2,10)<<endl;
-    cout<<pontencia_interativa(2,10)<<endl;
+    cout<<pontencia_iterativa(2,10)<<endl;
     //5
     const int* const p= new int(5);
     const int& c=*p;
