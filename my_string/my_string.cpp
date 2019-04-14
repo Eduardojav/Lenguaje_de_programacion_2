@@ -2,7 +2,6 @@
 #include "my_string2.h"
 #include "testingstr.h"
 #include<iostream>
-my_string aux("hola");
 my_string::my_string(){
             A=new char[0];}
 my_string::my_string (const char * text){
@@ -46,25 +45,25 @@ my_string & my_string::operator = (const char* text){
 		A[i]=text[i];
     return *this;
 }
-my_string& my_string::operator + (const my_string & text){
+my_string my_string :: operator + (const my_string & text){
 	int b=text.tam;
 	int i=0;
 	int c=0;
-	delete[] aux.A;
+	my_string aux;
 	aux.A=new char[b+tam];
 	aux.tam=tam+b;
 	for( i=0;i<tam;i++)aux[i]=A[i];
     for( i=tam-1;i<tam+b;i++) aux[i]=text.A[c++];
     return aux;
 }
-my_string & my_string:: operator +(const  char* text){
+my_string my_string :: operator +(const  char* text){
     int i=0;
     int b=0;
 	while(text[i] != '\0'){
             i++;
             b++;}
 	int c=0;
-	delete[] aux.A;
+	my_string aux;
 	aux.A=new char[b+tam];
 	aux.tam=tam+b;
 	for( i=0;i<tam;i++)aux[i]=A[i];
