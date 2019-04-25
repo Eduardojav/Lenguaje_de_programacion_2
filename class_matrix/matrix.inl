@@ -23,7 +23,7 @@ template <class T>
 matrix<T> :: matrix(size_t nr, size_t nc)
 {
     n_rows=nr;
-    n_colums=nr;
+    n_columns=nr;
     M= new T *[nr];
     for(int i=0; i<nr; i++){
         M[i]=new T [nc];
@@ -43,12 +43,12 @@ template <class T>
 matrix<T> :: matrix(const matrix<T> & dat)
 {
     n_rows=dat.n_rows;
-    n_colums=dat.n_colums;
+    n_columns=dat.n_columns;
     M= new T *[n_rows];
     for(int i=0; i<n_rows; i++){
-        M[i]=new T [n_colums];
+        M[i]=new T [n_columns];
     }
-    for(int i=0; i<n_colums; i++){
+    for(int i=0; i<n_columns; i++){
         for(int j=0; j<n_rows; j++){
             M[i][j]=dat.M[i][j];
         }
@@ -67,12 +67,12 @@ matrix<T> matrix<T> :: operator + (const matrix<T> & dat)
 {
     matrix<T> mt;
     mt.n_rows=n_rows+dat.n_rows;
-    mt.n_colums=n_colums+dat.n_colums;
+    mt.n_columns=n_columns+dat.n_columns;
     mt.M= new T *[mt.n_rows];
     for(int i=0; i<mt.n_rows; i++){
-        mt.M[i]=new T [mt.n_colums];
+        mt.M[i]=new T [mt.n_columns];
     }
-    for(int i=0; i<n_colums; i++){
+    for(int i=0; i<n_columns; i++){
         for(int j=0; j<n_rows; j++){
             mt.M[i][j]=M[i][j]+dat.M[i][j];
         }
@@ -84,13 +84,30 @@ matrix<T> matrix<T> :: operator * (const matrix<T> & dat)
 {
     matrix<T> mt;
     mt.n_rows=n_rows;
-    mt.n_colums=dat.n_colums;
+    mt.n_columns=dat.n_columns;
     mt.M= new T *[mt.n_rows];
     for(int i=0; i<mt.n_rows; i++){
-        mt.M[i]=new T [mt.n_colums];
+        mt.M[i]=new T [mt.n_columns];
     }
+    T suma=0;
+    for(int i=0; i<n_columns;i++){
+        for(int j=0; j<n_rows; j++){
+            for(int l=0; l<n_columns;l++){
+                suma=suma+(M[i][l] * dat.M[l][j]);
+            }
+            mt.M[i][j]=suma;
+            suma=0;
+        }
+    }
+    return mt;
 }
 template <class T>
 matrix<T> matrix<T> :: operator << (T&v)
 {
+
+}
+template <class T>
+std::ostream& operator << (std::ostream & os,const matrix<T>& dat)
+{
+    return os<<dat.M;
 }
