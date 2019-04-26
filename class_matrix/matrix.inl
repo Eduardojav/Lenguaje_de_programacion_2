@@ -23,11 +23,16 @@ template <class T>
 matrix<T> :: matrix(size_t nr, size_t nc)
 {
     n_rows=nr;
-    n_columns=nr;
+    n_columns=nc;
     M= new T *[nr];
     for(int i=0; i<nr; i++){
         M[i]=new T [nc];
     }
+    /*for(int i=0; i<n_rows; i++){
+        for(int j=0;j<n_columns;j++){
+            M[i][j]=2;
+        }
+    }*/
 }
 
 template <class T>
@@ -107,7 +112,13 @@ matrix<T> matrix<T> :: operator << (T&v)
 
 }
 template <class T>
-std::ostream& operator << (std::ostream & os,const matrix<T>& dat)
+ostream& operator << (ostream & os,const matrix<T>& dat)
 {
-    return os<<dat.M;
+    for(int i=0; i<dat.n_rows; i++){
+        for(int j=0;j<dat.n_columns;j++){
+            os<<dat.M[i][j];
+        }
+        os<<endl;
+    }
+    return os;
 }

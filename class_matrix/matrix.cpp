@@ -5,6 +5,7 @@ using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    matrix<int> hoa(2,2);
+    cout<<hoa;
     return 0;
 }

@@ -4,12 +4,19 @@
 
 using namespace std;
 
+template<class T>
+class matrix;
+
+template<class T>
+ostream& operator<<(ostream& os, const matrix<T> & dat);
+
 template <class T>
 class matrix{
     private:
         T** M;
         size_t n_rows;
         size_t n_columns;
+        friend ostream & operator << <>(ostream & os,const matrix<T> & dat);
     public:
         //matrix(const T** dat);
         matrix(size_t nr=0, size_t nc=0);
@@ -20,7 +27,8 @@ class matrix{
         //matrix<T> operator + (const T ** dat);
         matrix<T> operator * (const matrix<T> & dat);
         matrix<T> operator << (T&v);
-        friend std::ostream & operator << (std::ostream & os,const matrix<T> & dat);
+
+
 };
 #include "matrix.inl"
 #endif
