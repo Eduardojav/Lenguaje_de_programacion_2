@@ -13,7 +13,7 @@ ostream& operator<<(ostream& os, const matrix<T> & dat);
 template <class T>
 class matrix{
     private:
-        T** M;
+        T* M;
         size_t n_rows;
         size_t n_columns;
         int r = 0;

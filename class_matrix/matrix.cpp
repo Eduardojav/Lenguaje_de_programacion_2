@@ -11,6 +11,6 @@ int main()
     he<<1<<2<<3<<4;
     cout<<hoa+he;
     cout<<hoa*he;
-    cout<<hoa(1,2);
+    cout<<hoa(0,1);
     return 0;
 }
