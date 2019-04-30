@@ -16,6 +16,8 @@ class matrix{
         T** M;
         size_t n_rows;
         size_t n_columns;
+        int r = 0;
+        int c = 0;
         friend ostream & operator << <>(ostream & os,const matrix<T> & dat);
     public:
         //matrix(const T** dat);
@@ -26,7 +28,7 @@ class matrix{
         matrix<T> operator + (const matrix<T> & dat);
         //matrix<T> operator + (const T ** dat);
         matrix<T> operator * (const matrix<T> & dat);
-        matrix<T> operator << (T&v);
+        matrix<T>& operator << (const T v);
 
 
 };
