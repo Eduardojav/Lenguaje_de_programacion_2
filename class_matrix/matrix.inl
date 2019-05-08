@@ -62,8 +62,8 @@ matrix<T> matrix<T> :: operator + (const matrix<T> & dat)
     mt.n_rows = dat.n_rows;
     mt.n_columns = dat.n_columns;
     mt.M = new T [mt.n_rows*mt.n_columns];
-    for(int i=0; i<n_columns; i++){
-        for(int j=0; j<n_rows; j++){
+    for(int i=0; i<n_rows; i++){
+        for(int j=0; j<n_columns; j++){
             mt.M[j*mt.n_rows + i] = M[j*n_rows + i] + dat.M[j*dat.n_rows + i];
         }
     }
@@ -78,8 +78,8 @@ matrix<T> matrix<T> :: operator * (const matrix<T> & dat)
     mt.n_columns = dat.n_columns;
     mt.M = new T [mt.n_rows*mt.n_columns];
     T suma = 0;
-    for(int i=0; i<n_columns;i++){
-        for(int j=0; j<n_rows; j++){
+    for(int i=0; i<n_rows;i++){
+        for(int j=0; j<n_columns; j++){
             for(int l=0; l<n_columns;l++){
                 suma = suma + (M[l*n_rows + i] * dat.M[j*dat.n_rows + l]);
             }
