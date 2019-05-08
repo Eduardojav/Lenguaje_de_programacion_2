@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <cassert>
 using namespace std;
 
 /*template <class T>
@@ -50,12 +50,14 @@ matrix<T> :: matrix(const matrix<T> & dat)
 template <class T>
 T & matrix<T>:: operator () (size_t i, size_t j)
 {
+    assert(i<n_rows && j<n_columns);
     return M[j*n_rows + i];
 }
 
 template <class T>
 matrix<T> matrix<T> :: operator + (const matrix<T> & dat)
 {
+    assert(n_rows == dat.n_rows && n_columns == dat.n_columns);
     matrix<T> mt;
     mt.n_rows = dat.n_rows;
     mt.n_columns = dat.n_columns;
@@ -70,6 +72,7 @@ matrix<T> matrix<T> :: operator + (const matrix<T> & dat)
 template <class T>
 matrix<T> matrix<T> :: operator * (const matrix<T> & dat)
 {
+    assert(n_columns == dat.n_rows);
     matrix<T> mt;
     mt.n_rows = n_rows;
     mt.n_columns = dat.n_columns;
