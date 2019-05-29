@@ -13,8 +13,6 @@ using namespace std;
 class circle:public figure
 {
 private:
-    int x;
-    int y;
     int r;
 public:
     circle(int x_=0,int y_=0,int r_=0);

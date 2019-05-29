@@ -13,8 +13,6 @@ using namespace std;
 class square:public figure
 {
 private:
-    int x;
-    int y;
     int l_size;
 public:
     square(int x_=0, int y_=0, int l_size_=0);

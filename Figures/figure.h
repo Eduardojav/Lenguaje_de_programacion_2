@@ -12,7 +12,8 @@ using namespace std;
 
 class figure{
 protected:
-
+    int x;
+    int y;
 public:
     virtual void draw(QPainter * painter)=0;
     virtual ~figure();

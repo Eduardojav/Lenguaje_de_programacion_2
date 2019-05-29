@@ -14,8 +14,6 @@ using namespace std;
 class triangle:public figure
 {
 private:
-    int x;
-    int y;
     int l_size;
 public:
     triangle(int x_=0, int y_=0, int l_size_=0);
