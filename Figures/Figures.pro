@@ -25,15 +25,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        circle.cpp \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+        square.cpp \
+        triangle.cpp
 
 HEADERS += \
-        class_circle.h \
-        class_figure.h \
-        class_square.h \
-        class_triangle.h \
-        mainwindow.h
+        circle.h \
+        figure.h \
+        mainwindow.h \
+        square.h \
+        triangle.h
 
 FORMS += \
         mainwindow.ui

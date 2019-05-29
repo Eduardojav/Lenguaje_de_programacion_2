@@ -1,5 +1,5 @@
-#ifndef CLASS_FIGURE_H
-#define CLASS_FIGURE_H
+#ifndef FIGURE_H
+#define FIGURE_H
 
 #include <iostream>
 #include <QMainWindow>
@@ -7,15 +7,15 @@
 #include <QPainter>
 #include <QPixmap>
 #include <QPen>
-#include "mainwindow.h"
+
 using namespace std;
 
-class figure:public MainWindow{
+class figure{
 protected:
 
 public:
     virtual void draw(QPainter * painter)=0;
+    virtual ~figure();
 };
 
-
-#endif // CLASS_FIGURE_H
+#endif // FIGURE_H

@@ -1,5 +1,5 @@
-#ifndef CLASS_SQUARE_H
-#define CLASS_SQUARE_H
+#ifndef SQUARE_H
+#define SQUARE_H
 
 #include <iostream>
 #include <QMainWindow>
@@ -7,16 +7,19 @@
 #include <QPainter>
 #include <QPixmap>
 #include <QPen>
-#include "class_figure.h"
-#include "mainwindow.h"
+#include "figure.h"
 using namespace std;
 
 class square:public figure
 {
 private:
-
+    int x;
+    int y;
+    int l_size;
 public:
+    square(int x_=0, int y_=0, int l_size_=0);
+    ~square();
     void draw(QPainter * painter);
 };
 
-#endif // CLASS_SQUARE_H
+#endif // SQUARE_H

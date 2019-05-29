@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>734</width>
-    <height>464</height>
+    <width>635</width>
+    <height>536</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="Draw">
     <property name="geometry">
      <rect>
-      <x>640</x>
-      <y>380</y>
+      <x>550</x>
+      <y>450</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -32,8 +32,8 @@
      <rect>
       <x>10</x>
       <y>5</y>
-      <width>711</width>
-      <height>361</height>
+      <width>611</width>
+      <height>431</height>
      </rect>
     </property>
     <property name="text">
@@ -44,7 +44,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>380</y>
+      <y>450</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -56,8 +56,8 @@
    <widget class="QPushButton" name="Add_square">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>380</y>
+      <x>130</x>
+      <y>450</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -69,8 +69,8 @@
    <widget class="QPushButton" name="Add_triangle">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>380</y>
+      <x>230</x>
+      <y>450</y>
       <width>71</width>
       <height>21</height>
      </rect>
@@ -85,7 +85,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>734</width>
+     <width>635</width>
      <height>21</height>
     </rect>
    </property>

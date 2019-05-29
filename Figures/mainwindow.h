@@ -6,6 +6,12 @@
 #include <QPainter>
 #include <QPixmap>
 #include <QPen>
+#include <vector>
+#include "figure.h"
+#include "circle.h"
+#include "square.h"
+#include "triangle.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -32,9 +38,7 @@ protected:
     QPainter * painter;
     QPixmap * pixmap;
     QPen * pen;
-    int n_circles=0;
-    int n_squares=0;
-    int n_triangles=0;
+    vector<figure*> af;
 private:
     Ui::MainWindow *ui;
 };

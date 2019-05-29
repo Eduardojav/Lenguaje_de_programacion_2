@@ -1,5 +1,5 @@
-#ifndef CLASS_CIRCLE_H
-#define CLASS_CIRCLE_H
+#ifndef CIRCLE_H
+#define CIRCLE_H
 
 #include <iostream>
 #include <QMainWindow>
@@ -7,16 +7,19 @@
 #include <QPainter>
 #include <QPixmap>
 #include <QPen>
-#include "class_figure.h"
-#include "mainwindow.h"
+#include "figure.h"
 using namespace std;
 
 class circle:public figure
 {
 private:
-
+    int x;
+    int y;
+    int r;
 public:
+    circle(int x_=0,int y_=0,int r_=0);
+    ~circle();
     void draw(QPainter * painter);
 };
 
-#endif // CLASS_CIRCULE_H
+#endif // CIRCLE_H
