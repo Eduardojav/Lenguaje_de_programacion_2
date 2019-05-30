@@ -26,6 +26,9 @@ MainWindow::~MainWindow()
     delete pixmap;
     delete pen;
     delete ui;
+    for(unsigned long long i=0;i<af.size();i++){
+        delete [] af[i];
+    }
 }
 
 void MainWindow::on_Draw_clicked()
